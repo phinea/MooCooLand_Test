@@ -79,33 +79,8 @@
     <Reference Include="Mono.Cecil">
       <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
     </Reference>
-    <Reference Include="Facebook.Unity">
-      <HintPath>Assets\FacebookSDK\Plugins\Facebook.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Gameroom">
-      <HintPath>Assets\FacebookSDK\Plugins\Gameroom\Facebook.Unity.Gameroom.dll</HintPath>
-    </Reference>
-    <Reference Include="FacebookNamedPipeClient">
-      <HintPath>Assets\FacebookSDK\Plugins\Gameroom\FacebookNamedPipeClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>Assets\FacebookSDK\Plugins\Settings\Facebook.Unity.Settings.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\LogView.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\MenuBase.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AccessTokenMenu.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppEvents.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppInvites.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppLinks.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\DialogShare.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\MainMenu.cs" />
-    <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
-    <Compile Include="Assets\Scripts\Facebook\FacebookManager.cs" />
     <Compile Include="Assets\Scripts\General\GameEngine\GameManager.cs" />
     <Compile Include="Assets\Scripts\General\GameEngine\HighscoreManager.cs" />
     <Compile Include="Assets\Scripts\General\GameEngine\User.cs" />
@@ -116,6 +91,8 @@
     <Compile Include="Assets\Scripts\General\Inputs\Cursors\VisualCursors\Custom3DCursor.cs" />
     <Compile Include="Assets\Scripts\General\Inputs\Cursors\VisualCursors\CustomCursorManager.cs" />
     <Compile Include="Assets\Scripts\General\Inputs\Cursors\VisualCursors\ICursor.cs" />
+    <Compile Include="Assets\Scripts\General\Inputs\GestureManager.cs" />
+    <Compile Include="Assets\Scripts\General\Inputs\HandsManager.cs" />
     <Compile Include="Assets\Scripts\General\Inputs\InputCommands\CommandInputMonitor.cs" />
     <Compile Include="Assets\Scripts\General\Inputs\InputCommands\IInputCommand.cs" />
     <Compile Include="Assets\Scripts\General\Inputs\InputCommands\InputMonitor.cs" />
@@ -127,6 +104,7 @@
     <Compile Include="Assets\Scripts\General\Targeting\Target.cs" />
     <Compile Include="Assets\Scripts\General\Targeting\VisualFeedbackManager.cs" />
     <Compile Include="Assets\Scripts\General\Timing\Countdown.cs" />
+    <Compile Include="Assets\Scripts\General\Trigger_OnCollisionDestroyOtherObject.cs" />
     <Compile Include="Assets\Scripts\General\UI Elements\Button_StartScene.cs" />
     <Compile Include="Assets\Scripts\General\UI Elements\Button_ToggleMenu.cs" />
     <Compile Include="Assets\Scripts\General\UI Elements\UI_Button.cs" />
@@ -136,10 +114,12 @@
     <Compile Include="Assets\Scripts\RotateAutomatic.cs" />
     <Compile Include="Assets\Scripts\Shmooter-TheShooter\LevelManagement\Level.cs" />
     <Compile Include="Assets\Scripts\Shmooter-TheShooter\LevelManagement\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Shmooter-TheShooter\ShootingGalleryManager.cs" />
+    <Compile Include="Assets\Scripts\Shmooter-TheShooter\SpawnTrigger.cs" />
+    <Compile Include="Assets\Scripts\Shmooter-TheShooter\Target_ShootingGallery.cs" />
     <Compile Include="Assets\Scripts\Shmooter-TheShooter\Target_WithScore.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\FacebookSDK\link.xml" />
     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
   </ItemGroup>

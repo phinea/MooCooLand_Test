@@ -12,23 +12,30 @@ namespace MooCooEngine.Game
         public string LevelName;
         public string LevelID;
 
+        public ShootingGalleryManager AssociatedGameManagerForThisLevel;
+
         // TODO: Add other descriptions... particular layouts, etc.
 
         public bool isTimed = true;
         public float timerMaxInSec = 100;
 
-        
-    }
+        public void StartLevel()
+        {
+            if (AssociatedGameManagerForThisLevel != null)
+            {
+                AssociatedGameManagerForThisLevel.enabled = true;
+                AssociatedGameManagerForThisLevel.gameObject.SetActive(true);
+            }
+        }
 
-    public enum SupportedTargetTypes
-    {
-        Target1,
-        Target2,
-    }
-
-    public enum SupportedDistractorTypes
-    {
-        DistractorType1,
-        DistractorType2,
+        public void FinishLevel()
+        {
+            if (AssociatedGameManagerForThisLevel != null)
+            {
+                AssociatedGameManagerForThisLevel.enabled = false;
+                AssociatedGameManagerForThisLevel.gameObject.SetActive(false);
+                AssociatedGameManagerForThisLevel.RemoveAllTargets();
+            }
+        }
     }
 }

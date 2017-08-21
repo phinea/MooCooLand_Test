@@ -8,7 +8,6 @@ namespace MooCooEngine.Input
     public enum InputProviderType
     {
         None = 0,
-
         Athelas = (1 << 0),
         Retrofit = (1 << 1),
         SimulatedETWithMouse = (1 << 2),

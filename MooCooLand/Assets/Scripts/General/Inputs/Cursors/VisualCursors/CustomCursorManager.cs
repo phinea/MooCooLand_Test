@@ -20,6 +20,10 @@ namespace MooCooEngine.Input.Cursors
 
         void OnGUI()
         {
+    #if WINDOWS_UWP
+            startWithThisCursorType = CursorType.CenteredCam;        
+    #endif
+
             if (!initialized)
             {
                 RegisterManualInputListener();
@@ -36,7 +40,7 @@ namespace MooCooEngine.Input.Cursors
             }
         }
 
-        #region Set individual cursors
+#region Set individual cursors
         void SetToMouse()
         {
             SetCursorVisibility(true, false, false);
@@ -57,9 +61,9 @@ namespace MooCooEngine.Input.Cursors
             InputManager.Instance.ChangeMainCursor(CursorType.CenteredCam);
             //InputManager.Instance.ResetInputTypes(new InputType[3] { InputType.Mouse, InputType.Gaze, InputType.CenteredCursor });
         }
-        #endregion
+#endregion
 
-        #region Handle manual input
+#region Handle manual input
         void RegisterManualInputListener()
         {
             // Register for manual input events
@@ -140,10 +144,10 @@ namespace MooCooEngine.Input.Cursors
 
         private void InitAllCursors()
         {
-            SetToMouse();
-            SetToManual();
-            SetToCentered();
+            //SetToMouse();
+            //SetToManual();
+            //SetToCentered();
         }
-        #endregion
+#endregion
     }
 } 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using MooCooEngine.Input.Cursors;
+using System;
 
 namespace MooCooEngine.Input
 {
@@ -211,12 +212,13 @@ namespace MooCooEngine.Input
         public void InputArrived(object sender, InputCommandArgs args)
         {
             Debug.Log(">> Target >> InputArrived! = " + args.Action);
+
             switch (args.Action)
             {
                 case InputCommand.SelectionKeyPressed:
                     if (HitTarget != null)
                     {
-                        HitTarget.SendMessage("OnSelect",SendMessageOptions.DontRequireReceiver);
+                        HitTarget.SendMessage("OnSelect", SendMessageOptions.DontRequireReceiver);
                     }
                     break;
             }

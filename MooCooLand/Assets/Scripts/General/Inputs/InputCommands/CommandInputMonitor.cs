@@ -50,6 +50,8 @@ namespace MooCooEngine.Input
                 {
                     //pressedKeys.Add(kcode);
                     Debug.Log(">> Key DOWN: " + kcode);
+                    if(kcode == KeyCode.Mouse0)
+                        CommandInputMonitor.PostInputCommand(InputCommand.SelectionKeyPressed);
                 }
 
                 if (UnityEngine.Input.GetKeyUp(kcode))

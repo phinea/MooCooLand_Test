@@ -63,7 +63,7 @@ namespace MooCooEngine.Game
         //TODO: Should be an individual level class
         public void ShowCountdown()
         {
-            if ((UI_Countdown != null)&&(countDown.IsActive))
+            if ((UI_Countdown != null)&&(countDown!=null)&&(countDown.IsActive))
             {
                 //countdownInSec = countdownMaxInSec - (DateTime.UtcNow - timeLevelStarted).TotalSeconds;
                 UI_Countdown.text = ""+countDown.TimeInFullSec;
@@ -81,11 +81,12 @@ namespace MooCooEngine.Game
         public void StartLevel()
         {
             currentScore = 0;
-
             Debug.Log("Start new level: " + currentLevelIndex);
             if ((LevelNames != null) && (currentLevelIndex < LevelNames.Length))
             {
                 Level lvl = LevelNames[currentLevelIndex];
+                lvl.StartLevel();
+
                 if (lvl.isTimed)
                 {
                     countDown = new Countdown();
@@ -110,7 +111,7 @@ namespace MooCooEngine.Game
             }
         }
 
-        public int minPointsToProceedToNextLevel = -1;
+        public int minPointsToProceedToNextLevel = -1; // TODO: Should be with the individual levels???
 
         private void CountDown_OnCountDownFinished(object sender, CountDownEventArgs e)
         {
@@ -127,6 +128,9 @@ namespace MooCooEngine.Game
 
         public void ProceedToNextLevel()
         {
+            Level lvl = LevelNames[currentLevelIndex];
+            lvl.FinishLevel();
+
             if (NextLevelIsAvailable())
             {
                 Debug.Log("SUCCESS! Proceed to next level! ");
